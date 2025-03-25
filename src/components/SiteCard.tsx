@@ -25,9 +25,10 @@ export interface SiteData {
 interface SiteCardProps {
   site: SiteData;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const SiteCard: React.FC<SiteCardProps> = ({ site, className }) => {
+const SiteCard: React.FC<SiteCardProps> = ({ site, className, style }) => {
   const [expanded, setExpanded] = useState(false);
   
   return (
@@ -37,6 +38,7 @@ const SiteCard: React.FC<SiteCardProps> = ({ site, className }) => {
         expanded ? "shadow-md" : "shadow-sm hover:shadow-md",
         className
       )}
+      style={style}
     >
       <div className="relative aspect-video overflow-hidden">
         <img 
